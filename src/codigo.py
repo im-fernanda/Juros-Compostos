@@ -63,3 +63,31 @@ def plotar_grafico_evolucao(tabela):
     plt.grid()
     plt.legend()
     plt.show()
+
+def main():
+    print("Calculadora de Juros Compostos")
+    capital = float(input("Digite o capital inicial (R$): "))
+    taxa = float(input("Digite a taxa de juros (% ao período): ")) / 100
+    tempo = int(input("Digite o número de períodos: "))
+
+    montante_final = calcular_montante(capital, taxa, tempo)
+    juros_totais = calcular_juros_totais(montante_final, capital)
+    tabela = gerar_tabela_evolucao(capital, taxa, tempo)
+
+    print("\nResumo:")
+    print(f"Montante Final: R$ {montante_final:,.2f}")
+    print(f"Juros Totais: R$ {juros_totais:,.2f}")
+    print("\nEvolução dos Juros:")
+    print(tabela)
+
+    salvar = input("\nDeseja salvar os resultados em Excel? (s/n): ").strip().lower()
+    if salvar == 's':
+        tabela.to_excel("evolucao_juros_compostos.xlsx", index=False)
+        print("Tabela salva como 'evolucao_juros_compostos.xlsx'.")
+
+    plotar = input("Deseja visualizar o gráfico de evolução? (s/n): ").strip().lower()
+    if plotar == 's':
+        plotar_grafico_evolucao(tabela)
+
+if __name__ == "__main__":
+    main()
