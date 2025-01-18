@@ -18,7 +18,7 @@ Este repositório foi desenvolvido como parte da disciplina Planejamento e Gerê
 A calculadora permite calcular o crescimento de um capital inicial baseado em uma taxa de juros composta ao longo de um número definido de períodos. Além disso, é possível:
 - Gerar uma tabela detalhada de como os juros e o montante evoluem a cada período.
 - Exportar os resultados para um arquivo Excel.
-- Visualizar a evolução do montante por meio de gráficos
+- Visualizar a evolução do montante por meio de gráficos.
 
 ---
 
@@ -47,10 +47,11 @@ Juros Totais: R$ 795,85
    cd juros-compostos
 3. Instale as dependências do projeto:
     ```bash
-    flutter pub get
+    pip install pandas matplotlib
+
 4. Execute o arquivo principal:
     ```bash  
-    python juros_compostos.py
+    python codigo.py
     
 Para validar o funcionamento da calculadora, execute:
   ```bash
