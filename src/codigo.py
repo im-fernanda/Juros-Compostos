@@ -14,3 +14,16 @@ def calcular_montante(capital, taxa, tempo):
         float: Montante final.
     """
     return capital * (1 + taxa) ** tempo
+
+def calcular_juros_totais(montante, capital):
+    """
+    Calcula os juros totais acumulados.
+    
+    Args:
+        montante (float): Valor final acumulado.
+        capital (float): Valor inicial investido.
+
+    Returns:
+        float: Juros acumulados.
+    """
+    return montante - capital
